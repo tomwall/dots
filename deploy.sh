@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 homedir=$HOME
 
@@ -13,38 +13,18 @@ then
     exit 1
 fi
 
-files=$(git ls-tree --name-only --full-tree HEAD | grep -v deploy.sh | grep -v README | grep -v grep)
-
-#echo files
-#echo "$files"
-
-
+files=$(git ls-tree --name-only --full-tree HEAD | grep -v $(basename $0) | grep -v README | grep -v grep)
 backup_files=$(echo $files | sed "s|\./|$homedir/|g")
-
-#echo Deploying the following files to $homedir
-#echo "backups are $backup_files"
-
 backupfile=/tmp/dotfile-deploy-backup-$(date +%s).tar
 
 echo "Backing up files to $backupfile..."
+tar  --ignore-failed-read -cvf $backupfile $backup_files > /dev/null
 
-tar  --ignore-failed-read -cvf $backupfile $backup_files
-
-echo "Installing files: "
-
+echo "Deploying files..."
 for file in $files
 do
-    path=$homedir/$file
-    if [ ! -d $(dirname $path) ]
-    then
-	echo "$(dirname $path)"
-#	mkdir $(dirname $path)
-    fi
-
+    path=$homedir/$file  
     echo "$path"
-    #    cp $file $path
     rm -f $path
     ln -s $PWD/$file $path
 done
-
-#backup files
