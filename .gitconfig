@@ -1,0 +1,16 @@
+[user]
+	name = Tom Wall
+	email = (none)
+	useConfigOnly = true
+[push]
+	default = simple
+[core]
+	excludesFile = ~/.gitignore
+[alias]
+	st = status
+	co = checkout	
+	ci = commit
+	br = branch
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short	
+	change-commits = "!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [[ \\\"$`echo $VAR`\\\" = '$OLD' ]]; then export $VAR='$NEW'; fi\" $@; }; f "
+
