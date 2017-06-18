@@ -122,11 +122,9 @@ fi
 ##################################
 #LS_COLORS=$LS_COLORS:'di=0;35:' ; export LS_COLORS
 
-export WINHOME=/mnt/c/Users/twall
+export WINHOME=/mnt/c/Users/$USER
 export APPDATA=${WINHOME}/AppData
-
-
-
+export GITHUB=ssh://git@github.com
 
 
 
