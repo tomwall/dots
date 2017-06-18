@@ -1,3 +1,8 @@
+#
+# mintty settings & colors
+# Copy to a file called %APPDATA%/Roaming/wsltty/config to apply settings to wsltty
+#
+
 FontHeight=18
 Locale=en_US
 Charset=UTF-8
