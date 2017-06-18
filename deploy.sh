@@ -13,7 +13,7 @@ then
     exit 1
 fi
 
-files=$(git ls-tree --name-only --full-tree HEAD | grep -v deploy.sh | grep -v grep)
+files=$(git ls-tree --name-only --full-tree HEAD | grep -v deploy.sh | grep -v README | grep -v grep)
 
 #echo files
 #echo "$files"
