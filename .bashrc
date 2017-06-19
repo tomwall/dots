@@ -126,8 +126,7 @@ export WINHOME=/mnt/c/Users/$USER
 export APPDATA=${WINHOME}/AppData
 export GITHUB=ssh://git@github.com
 
-
-
+export PATH=$HOME/bin:$PATH
 
 
 
