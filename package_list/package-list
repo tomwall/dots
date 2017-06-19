@@ -1,0 +1,9 @@
+ build-essential
+ git cmake unzip
+ maven
+ emacs
+ gradle
+ xclip
+ openjdk-8-jdk
+ openjdk-7-jdk
+ subversion
