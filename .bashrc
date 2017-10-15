@@ -122,15 +122,25 @@ fi
 ##################################
 #LS_COLORS=$LS_COLORS:'di=0;35:' ; export LS_COLORS
 
-export WINHOME=/mnt/c/Users/$USER
+WINUSER=$USER
+if [ -d /mnt/c/Users/wall ] ; then
+    WINUSER=wall
+fi
+echo windows user name is $WINUSER
+export WINHOME=/mnt/c/Users/$WINUSER
+
+
 export APPDATA=${WINHOME}/AppData
+export DESKTOP=${WINHOME}/Desktop
+
+
 export GITHUB=ssh://git@github.com
 
 export PATH=$HOME/bin:$PATH
 
 
 
-
-
-
+if [ -f ~/.bash_work ]; then
+    . ~/.bash_work
+fi
 
