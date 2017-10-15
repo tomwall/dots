@@ -131,7 +131,8 @@ export WINHOME=/mnt/c/Users/$WINUSER
 
 
 export APPDATA=${WINHOME}/AppData
-export DESKTOP=${WINHOME}/Desktop
+export DESKTOP=/mnt/d/desktop
+
 
 
 export GITHUB=ssh://git@github.com
